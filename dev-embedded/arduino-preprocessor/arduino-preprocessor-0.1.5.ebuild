@@ -15,3 +15,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=">=sys-devel/clang-6.0.1"
+
+pkg_info() {
+	"${ROOT}"/usr/bin/arduino-preprocessor -version
+}
