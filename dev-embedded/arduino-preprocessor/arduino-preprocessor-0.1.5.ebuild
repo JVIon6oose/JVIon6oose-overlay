@@ -5,7 +5,7 @@ EAPI="7"
 
 DESCRIPTION="The Arduino Sketch preprocessor, turning sketches into valid C++."
 HOMEPAGE="https://github.com/arduino/arduino-preprocessor"
-SRC_URI="https://api.github.com/repos/JVIon6oose/${PN}/tarball/${PF}"
+SRC_URI="https://api.github.com/repos/JVIon6oose/${PN}/tarball/${PF} -> ${PF}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
