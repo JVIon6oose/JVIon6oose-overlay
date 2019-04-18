@@ -16,7 +16,18 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=">=sys-devel/clang-6.0.1"
 
-S=${WORKDIR}
+src_prepare() {
+
+	# Github's directory naming does ebuild conventions no favors.
+	MYDIR="$(ls ${WORKDIR})"
+
+	if [[ "$MYDIR" != "$P" ]]
+	then
+		mv $WORKDIR/$MYDIR $WORKDIR/$P
+	fi
+
+	eapply_user
+}
 
 pkg_info() {
 	"${ROOT}"/usr/bin/arduino-preprocessor -version
