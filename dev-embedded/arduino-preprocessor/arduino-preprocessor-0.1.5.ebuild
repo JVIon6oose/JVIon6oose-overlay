@@ -16,17 +16,18 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=">=sys-devel/clang-6.0.1"
 
-src_prepare() {
+src_unpack() {
+
+	unpack "$A"
 
 	# Github's directory naming does ebuild conventions no favors.
 	MYDIR="$(ls ${WORKDIR})"
 
+	ewarn "$WORKDIR and $P and $MYDIR"
 	if [[ "$MYDIR" != "$P" ]]
 	then
-		mv $WORKDIR/$MYDIR $WORKDIR/$P
+		mv "$WORKDIR/$MYDIR" "$WORKDIR/$P"
 	fi
-
-	eapply_user
 }
 
 pkg_info() {
