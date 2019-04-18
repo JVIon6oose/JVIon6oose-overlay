@@ -23,7 +23,6 @@ src_unpack() {
 	# Github's directory naming does ebuild conventions no favors.
 	MYDIR="$(ls ${WORKDIR})"
 
-	ewarn "$WORKDIR and $P and $MYDIR"
 	if [[ "$MYDIR" != "$P" ]]
 	then
 		mv "$WORKDIR/$MYDIR" "$WORKDIR/$P"
